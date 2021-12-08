@@ -52,9 +52,8 @@ source "vsphere-iso" "win11-horizon-base" {
     disk_thin_provisioned = true
   }
 
-  communicator   = "winrm"
-  winrm_username = "Administrator"
-  winrm_password = var.administrator_password
+  communicator     = "none"
+  shutdown_timeout = "2h"
 }
 
 build {
