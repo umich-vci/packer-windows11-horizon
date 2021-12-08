@@ -19,7 +19,7 @@ source "vsphere-iso" "win11-horizon-base" {
   boot_wait    = "60s"
   boot_command = ["<down><down><enter><wait><enter>", ]
 
-  floppy_content = {
+  cd_content = {
     "/autounattend.xml" = templatefile("${path.root}/boot/autounattend.xml.pkrtpl.hcl",
       {
         administrator_password = var.administrator_password
@@ -32,6 +32,9 @@ source "vsphere-iso" "win11-horizon-base" {
       }
     )
   }
+  cd_files = [
+    var.horizon_agent_installer_path,
+  ]
 
   cdrom_type = "sata"
   iso_paths = [

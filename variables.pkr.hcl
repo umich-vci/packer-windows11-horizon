@@ -74,3 +74,9 @@ variable "tools_iso_path" {
   type        = string
   default     = "[] /vmimages/tools-isoimages/windows.iso"
 }
+
+variable "horizon_agent_installer_path" {
+  description = "Path to the installer to use for the Horizon Agent. Defaults to \"./VMware-Horizon-Agent-x86_64-2111-8.4.0-18964730.exe\""
+  type = string
+  default = "./VMware-Horizon-Agent-x86_64-2111-8.4.0-18964730.exe"
+}
