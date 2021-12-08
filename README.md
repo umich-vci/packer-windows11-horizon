@@ -6,8 +6,8 @@ It installs:
 
 - Windows 11
 - VMware Tools
-- Horizon Agent (TODO)
 - Windows Updates (TODO)
+- Horizon Agent
 
 Currently, the [official packer-plugin-vsphere](https://github.com/hashicorp/packer-plugin-vsphere)
 [does not support creating vTPM devices](https://github.com/hashicorp/packer-plugin-vsphere/issues/108)
