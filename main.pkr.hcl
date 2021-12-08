@@ -14,6 +14,8 @@ source "vsphere-iso" "win11-horizon-base" {
   vTPM          = true
   datastore     = var.datastore
 
+  # wait for the boot menu to come up, go down to the first cd-rom drive, then wait and press enter for the press any key to boot prompt
+  # I'm not sure why the press any key to boot prompt doesn't come up initially.
   boot_wait    = "60s"
   boot_command = ["<down><down><enter><wait><enter>", ]
 
