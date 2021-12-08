@@ -5,7 +5,6 @@ source "vsphere-iso" "win11-horizon-base" {
   host                = var.esxi_host
   insecure_connection = true
 
-
   vm_name       = var.computer_name
   CPUs          = 2
   RAM           = 4096
@@ -22,13 +21,14 @@ source "vsphere-iso" "win11-horizon-base" {
   cd_content = {
     "/autounattend.xml" = templatefile("${path.root}/boot/autounattend.xml.pkrtpl.hcl",
       {
-        administrator_password = var.administrator_password
-        computer_name          = var.computer_name
-        image_name             = var.windows_image_name
-        owner                  = var.owner
-        organization           = var.organization
-        time_zone              = var.time_zone
-        windows_key            = var.windows_key
+        administrator_password  = var.administrator_password
+        computer_name           = var.computer_name
+        horizon_agent_installer = basename(var.horizon_agent_installer_path)
+        image_name              = var.windows_image_name
+        owner                   = var.owner
+        organization            = var.organization
+        time_zone               = var.time_zone
+        windows_key             = var.windows_key
       }
     )
   }

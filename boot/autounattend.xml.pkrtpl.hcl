@@ -38,6 +38,10 @@
                     <Order>1</Order>
                     <CommandLine>E:\setup.exe /S /v &quot;/qn&quot;</CommandLine>
                 </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Order>2</Order>
+                    <CommandLine>F:\${horizon_agent_installer} /s /v&quot;/qn VDM_VC_MANAGED_AGENT=1 ADDLOCAL=Core,SVIAgent,USB,RTAV&quot;</CommandLine>
+                </SynchronousCommand>
             </FirstLogonCommands>
         </component>
     </settings>
