@@ -36,11 +36,12 @@
                 <SynchronousCommand wcm:action="add">
                     <RequiresUserInput>false</RequiresUserInput>
                     <Order>1</Order>
-                    <CommandLine>E:\setup.exe /S /v &quot;/qn&quot;</CommandLine>
+                    <CommandLine>E:\setup.exe /S /v &quot;/qn msi_args ADDLOCAL=ALL REMOVE=CBHelper,VmwTimeProvider,FileIntrospection,NetworkIntrospection,Hgfs&quot;</CommandLine>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
+                    <RequiresUserInput>false</RequiresUserInput>
                     <Order>2</Order>
-                    <CommandLine>F:\${horizon_agent_installer} /s /v&quot;/qn VDM_VC_MANAGED_AGENT=1 ADDLOCAL=Core,SVIAgent,USB,RTAV&quot;</CommandLine>
+                    <CommandLine>REG ADD HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce /v HorizonAgent /t REG_SZ /d &quot;F:\${horizon_agent_installer} /s /v\&quot;/qn VDM_VC_MANAGED_AGENT=1 ADDLOCAL=Core,SVIAgent,USB,RTAV\&quot;&quot; /f</CommandLine>
                 </SynchronousCommand>
             </FirstLogonCommands>
         </component>
